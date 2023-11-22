@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Pages
+﻿namespace Framework.Pages
 {
     public class ShoppingCart
     {
@@ -15,49 +9,61 @@ namespace Framework.Pages
 
         public static void ClickButtonDeclineCookies()
         {
-            string locator = "//*[@id=CybotCookiebotDialogBodyButtonDecline]";
+            string locator = "//*[@id='CybotCookiebotDialogBodyButtonDecline']";
             Common.ClickElement(locator);
         }
 
         public static void ClickButtonLogIn()
         {
-            string locator = "//*[@id=top]";
+            string locator = "//*[contains(@class,'customer-btn')]";
             Common.ClickElement(locator);
         }
         public static void EnterPassword(string password)
         {
-            string locator = "//*[@id=pass]";
-            Common.ClickElement(locator);
+            string locator = "//*[@id='pass']";
+            Common.SendKeysToElement(locator, password);
         }
 
         public static void EnterUsername(string username)
         {
-            string locator = "//*[@id=email]";
-            Common.ClickElement(locator);
+            string locator = "//*[@id='email']";
+            Common.SendKeysToElement(locator, username);
         }
 
         public static void ClickButtonLogIn2()
         {
-            string locator = "//*[@id=send2]";
+            string locator = "//*[@id='send2']";
             Common.ClickElement(locator);
         }
 
         public static void EnterSearchPhrase(string searchPhrase)
         {
-            string locator = "//*[@id=search]";
+            string locator = "//*[@id='search']";
             Common.SendKeysToElement(locator, searchPhrase);
         }
 
         public static void ClickButtonSearch()
         {
-            string locator = "//*[@id=search_mini_form]";
+            string locator = "//*[@id='search_mini_form']";
+            Common.ClickElement(locator);
+        }
+       
+        public static void ClickButtonAddtoCart()
+        {
+            string locator = "//*[contains(@class,'btn-primary line-height-40 mt10') and text()='Į krepšelį']";
+            Common.ClickElement(locator);
+        }
+        public static void ClickButtonBuy()
+        {
+            string locator = "//*[contains(@class,'btn-primary block') and text()='Pirkti']";
             Common.ClickElement(locator);
         }
 
-        public static void ClickButtonAddtoCart()
+            public static bool searchPhraseIsVisible()
         {
-            string locator = "//*[@id=top]";
-            Common.ClickElement(locator);
-        }
+            string locator = "//a[contains(@href,’pasaku-knygeliu-advento-kalendorius’)] and text()='Pasakų knygelių advento kalendorius']";
+            Common.WaitForTheElementToBeVisible(locator);
+            return Common.ElementExists(locator);
+        }        
     }
 }

@@ -1,14 +1,10 @@
 ﻿using Framework.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tests.BaseTests;
 
 namespace Tests
 {
-    internal class WishlistScenario
+    internal class WishlistScenario : BaseTest
     {
         [Test]
         public void AddingProductToWishlist()
@@ -30,8 +26,7 @@ namespace Tests
             Wishlist.ClosePopUpWindow();
             Wishlist.ClickButtonWishList();
 
-
-
+            Assert.That(Wishlist.searchPhraseIsVisible(), Is.True);
         }
     }
 }

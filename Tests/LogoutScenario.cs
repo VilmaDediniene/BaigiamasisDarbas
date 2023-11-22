@@ -1,10 +1,5 @@
 ﻿using Framework.Pages;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tests.BaseTests;
 
 namespace Tests
@@ -24,6 +19,8 @@ namespace Tests
             Logout.EnterPassword(password);
             Logout.ClickButtonLogIn2();
             Logout.ClickButtonLogout();
+
+            Assert.That(Logout.LogInButtonIsVisible(), Is.True);
         }
     }
 }

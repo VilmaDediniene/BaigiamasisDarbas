@@ -25,6 +25,7 @@ Testuojama svetainė: [PatoguPirkti](https://www.patogupirkti.lt/)
 		1. Enter “Pasakų knygelių advento kalendorius” in a search box
 		1. Click “Search” button
 		1. Click the button “Į krepšelį”
+		1. Click the button "Pirkti"
 		1. *Assert* A book “Pasakų knygelių advento kalendorius” is visible in a shopping cart 
 		
 1. Wishlist

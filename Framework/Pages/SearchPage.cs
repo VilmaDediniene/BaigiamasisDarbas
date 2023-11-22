@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Pages
+﻿namespace Framework.Pages
 {
     public class SearchPage
     {
@@ -15,45 +9,51 @@ namespace Framework.Pages
 
         public static void ClickButtonDeclineCookies()
         {
-            string locator = "//*[@id=CybotCookiebotDialogBodyButtonDecline]";
+            string locator = "//*[@id='CybotCookiebotDialogBodyButtonDecline']";
             Common.ClickElement(locator);
         }
 
         public static void ClickButtonLogIn()
         {
-            string locator = "//*[@id=top]";
+            string locator = "//*[contains(@class,'customer-btn')]";
             Common.ClickElement(locator);
         }
 
         public static void EnterUsername(string username)
         {
-            string locator = "//*[@id=email]";
-            Common.ClickElement(locator);
+            string locator = "//*[@id='email']";
+            Common.SendKeysToElement(locator, username);
         }
 
         public static void EnterPassword(string password)
         {
-            string locator = "//*[@id=pass]";
-            Common.ClickElement(locator);
+            string locator = "//*[@id='pass']";
+            Common.SendKeysToElement(locator, password);
         }
 
         public static void ClickButtonLogIn2()
         {
-            string locator = "//*[@id=send2]";
+            string locator = "//*[@id='send2']";
             Common.ClickElement(locator);
         }
 
         public static void EnterSearchPhrase(string phrase)
         {
-            string locator = "//*[@id=search]";
+            string locator = "//*[@id='search']";
             Common.SendKeysToElement(locator, phrase);
         }
 
         public static void ClickButtonSearch()
         {
-            string locator = "//*[@id=search_mini_form]";
+            string locator = "//*[@id='search_mini_form']";
             Common.ClickElement(locator);
         }
 
+        public static bool SearchPhraseIsVisible()
+        {
+            string locator = "//a[contains(@href,’zaidimas-dobble-kake-make’)] and text()='Kakė Makė']";
+            Common.WaitForTheElementToBeVisible(locator);
+            return Common.ElementExists(locator);
+        }
     }
 }
