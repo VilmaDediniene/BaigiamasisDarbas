@@ -51,7 +51,8 @@
 
         public static bool SearchPhraseIsVisible()
         {
-            string locator = "//a[contains(@href,’zaidimas-dobble-kake-make’)] and text()='Kakė Makė']";
+            //string locator = "//a[contains(@href,’zaidimas-dobble-kake-make’)] and text()='Kakė Makė']";
+            string locator = "/html/body/div[3]/div/div[3]/div[2]/div[2]/div/div[2]/a";
             Common.WaitForTheElementToBeVisible(locator);
             return Common.ElementExists(locator);
         }

@@ -38,10 +38,5 @@ namespace Framework
             screenshot.SaveAsFile(screenshotFilePath);
             return screenshotFilePath;
         }
-
-        public static string TakeScreenshot()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

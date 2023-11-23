@@ -22,7 +22,6 @@ namespace Tests
             SearchPage.ClickButtonLogIn2();
             SearchPage.EnterSearchPhrase(searchPhrase);
             SearchPage.ClickButtonSearch();
-            Driver.TakeScreenshot();
 
             Assert.That(SearchPage.SearchPhraseIsVisible(), Is.True);
         }
