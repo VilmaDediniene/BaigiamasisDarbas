@@ -1,4 +1,5 @@
-﻿using Framework.Pages;
+﻿using Framework;
+using Framework.Pages;
 using NUnit.Framework;
 using Tests.BaseTests;
 
@@ -21,9 +22,9 @@ namespace Tests
             SearchPage.ClickButtonLogIn2();
             SearchPage.EnterSearchPhrase(searchPhrase);
             SearchPage.ClickButtonSearch();
+            Driver.TakeScreenshot();
 
             Assert.That(SearchPage.SearchPhraseIsVisible(), Is.True);
         }
     }
 }
-    
